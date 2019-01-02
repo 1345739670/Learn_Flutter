@@ -9,23 +9,30 @@ class BootomNavigation extends StatefulWidget {
 class BottomNavigationWidgetState extends State<BootomNavigation> {
   final _bottomnavigationColor = Colors.blue;
   int _currendIndex = 0;
-  List<Widget> appBarTitleList = List();
 
-  @override
-  void initState() {
-    appBarTitleList
-      ..add(AppBarWidget(title: 'Home',))
-      ..add(AppBarWidget(title: 'Email',))
-      ..add(AppBarWidget(title: 'Pages',))
-      ..add(AppBarWidget(title: 'Airplay',));
-    super.initState();
+  _getTitle(index) {
+    switch (index) {
+      case 0:
+        return _formatchTitle('Home');
+        break;
+      case 1:
+        return _formatchTitle('Email');
+      case 2:
+        return _formatchTitle('Pages');
+      case 3:
+        return _formatchTitle('Airplay');
+    }
+  }
+
+  _formatchTitle(String title) {
+    return new Text(title);
   }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: appBarTitleList[_currendIndex],
+        title: _getTitle(_currendIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
@@ -70,6 +77,7 @@ class BottomNavigationWidgetState extends State<BootomNavigation> {
         ],
         currentIndex: _currendIndex,
         onTap: (int index) {
+          if (_currendIndex == index) return;
           setState(() {
             _currendIndex = index;
           });
