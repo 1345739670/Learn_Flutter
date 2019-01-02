@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'appbar.dart';
 
 class BootomNavigation extends StatefulWidget {
   @override
@@ -11,6 +10,10 @@ class BottomNavigationWidgetState extends State<BootomNavigation> {
   int _currendIndex = 0;
 
   _getTitle(index) {
+    _formatchTitle(String title) {
+      return new Text(title);
+    }
+
     switch (index) {
       case 0:
         return _formatchTitle('Home');
@@ -22,10 +25,6 @@ class BottomNavigationWidgetState extends State<BootomNavigation> {
       case 3:
         return _formatchTitle('Airplay');
     }
-  }
-
-  _formatchTitle(String title) {
-    return new Text(title);
   }
 
   @override
