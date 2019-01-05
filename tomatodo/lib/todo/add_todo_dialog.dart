@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'todo.dart';
 
 class AddTodoDialog extends StatelessWidget {
-  // final controller = new TextEditingController();
-  TextEditingController controller = new TextEditingController();
+  final controller = new TextEditingController();
+  // TextEditingController controller = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
