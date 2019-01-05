@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:flutter/services.dart';
 
-import 'todo/todo_list.dart';
+import 'todo/todo_list_screen.dart';
 import 'package:tomatodo/bottom_navigation_bar.dart';
 // void main() => runApp(MyApp());
 
@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBarWidget(),
-      body: TodoList(),
+      body: TodoListScreen(),
     );
   }
 }
