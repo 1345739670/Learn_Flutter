@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'todo.dart';
-import 'add_todo_dialog.dart';
-import 'todo_list.dart';
+import '../todo/todo.dart';
+import '../todo/add_todo_dialog.dart';
+import '../todo/todo_list.dart';
 
 class TodoListScreen extends StatefulWidget {
   @override

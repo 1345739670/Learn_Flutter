@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:flutter/services.dart';
 
-import 'todo/todo_list_screen.dart';
+import 'pages/todo_list_screen.dart';
+import 'pages/calendar.dart';
+import 'pages/pomodoro.dart';
+import 'pages/settings.dart';
 import 'package:tomatodo/bottom_navigation_bar.dart';
 // void main() => runApp(MyApp());
 
@@ -39,11 +42,30 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _currentIndex = 0;
+  _setSIndex(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+  _getPage(_currentIndex) {
+    switch (_currentIndex) {
+      case 0:
+        return TodoListScreen();
+      case 1:
+        return CalendarScreen();
+      case 2:
+        return PomodoroScreen();
+      case 3:
+        return SettingScreen();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBarWidget(),
-      body: TodoListScreen(),
+      bottomNavigationBar: BottomNavigationBarWidget(onTapCallback: _setSIndex),
+      body: _getPage(_currentIndex),
     );
   }
 }
