@@ -112,7 +112,7 @@ class ChatMessage extends StatelessWidget {
             CurvedAnimation(parent: animationController, curve: Curves.easeOut),
         axisAlignment: 0.0,
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 10.0),
+          margin: EdgeInsets.symmetric(vertical: 10.0),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
